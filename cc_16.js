@@ -54,7 +54,7 @@ products.slice(0, 5).forEach(product => { //takes first 5 products
     productDiv.className = "product-div";
     // html fo reach product
 
-    productCard.innerHTML = `
+    productDiv.innerHTML = `
     <img src="${image[0].url}" alt="${name}" />
     <div class="product-name">${name}</div>
     <div class="product-price">$${(price / 100).toFixed(2)}</div>
