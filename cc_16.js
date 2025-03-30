@@ -62,7 +62,15 @@ products.slice(0, 5).forEach(product => { //takes first 5 products
 
     container.appendChild(productDiv);
 
-});
+ });
 }
+
+// task 5: reusable error handler
+
+function handleError(error) {
+    console.error("An error occurred:", error.message);
+} // shows an error message on console
+
+
 
 
