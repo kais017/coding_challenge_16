@@ -42,26 +42,27 @@ async function fetchProductsAsync() { //creating another function that uses asyn
 //task 4: display products
 
 function displayProducts(products) {
-const productContainer = document.querySelector('#product-container');
-productContainer.innerHTML = '';
+    const container = document.getElementById("product-container");
+container.innerHTML = '';
 
-products.slice(0, 5).forEach(product => {
-    const productElement = document.createElement('div');
-    productElement.classList.add('product');
+products.slice(0, 5).forEach(product => { //takes first 5 products
     
-    // Create HTML structure for each product
-    const productHTML = `
-      <h3>${product.name}</h3>
-      <p>Price: $${product.price}</p>
-      <img src="${product.image}" alt="${product.name}" />
-    `;
-    
-    // Set the HTML content for the product
-    productElement.innerHTML = productHTML;
-    
-    // Append the product to the container
-    productContainer.appendChild(productElement);
+    const { name, price, image } = product.fields;
+    // names, price, and image of product
+
+    const productDiv = document.createElement("div");
+    productDiv.className = "product-div";
+    // html fo reach product
+
+    productCard.innerHTML = `
+    <img src="${image[0].url}" alt="${name}" />
+    <div class="product-name">${name}</div>
+    <div class="product-price">$${(price / 100).toFixed(2)}</div>
+  `;
+
+    container.appendChild(productDiv);
+
 });
-
 }
+
 
